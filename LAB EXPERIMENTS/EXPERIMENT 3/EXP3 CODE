@@ -1,0 +1,12 @@
+from sklearn.tree import DecisionTreeClassifier
+
+X = [[0,0,0,0],[0,0,1,1],[1,0,1,0],
+     [2,1,1,0],[2,2,0,0],[2,2,1,1]]
+
+y = ['No','No','Yes','Yes','Yes','No']
+
+model = DecisionTreeClassifier(criterion='entropy')
+model.fit(X, y)
+
+sample = [[0,2,1,1]]
+print("Prediction:", model.predict(sample)[0])

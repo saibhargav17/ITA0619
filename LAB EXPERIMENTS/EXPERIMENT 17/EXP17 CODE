@@ -1,0 +1,11 @@
+from sklearn.tree import DecisionTreeClassifier
+
+X = [[4,64,3000], [6,128,4000], [8,128,4500],
+     [4,128,3500], [8,256,5000], [12,256,6000]]
+
+y = ['Low','Medium','High','Medium','High','Premium']
+
+model = DecisionTreeClassifier(random_state=0)
+model.fit(X, y)
+
+print("Mobile Price:", model.predict([[8,128,4500]])[0])

@@ -1,0 +1,11 @@
+from sklearn.naive_bayes import GaussianNB
+
+X = [[20,600,1], [25,650,0], [30,700,1],
+     [15,550,0], [40,750,1], [18,580,0]]
+
+y = ['Yes','Yes','Yes','No','Yes','No']
+
+model = GaussianNB()
+model.fit(X, y)
+
+print("Loan Approval:", model.predict([[28,680,1]])[0])
